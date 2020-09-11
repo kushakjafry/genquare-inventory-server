@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var Currency = mongoose.Types.Currency;
 
 var bookSchema = new Schema({
   name: {
@@ -22,8 +21,8 @@ var bookSchema = new Schema({
     required: true,
   },
   price: {
-    type: Currency,
-    required: true,
+    type: Number,
+    require: true,
   },
 });
 
