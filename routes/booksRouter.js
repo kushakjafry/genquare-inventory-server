@@ -61,6 +61,31 @@ bookRouter.post("/updateMany", authenticate.verifyUser, (req, res, next) => {
     )
     .catch((err) => next(err));
 });
+bookRouter.post("/insertMany", authenticate.verifyUser, (req, res, next) => {
+  Books.insertMany(req.body, { ordered: false })
+    .then(
+      (data) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(data);
+      },
+      (err) => {
+        if (err.code === 11000) {
+          let book = [];
+          err.writeErrors.forEach((data) => {
+            let object = data.err.op.skuId;
+            book.push(object);
+          });
+          res.statusCode = 500;
+          res.setHeader("Content-Type", "application/json");
+          res.json({ err: book, message: "error" });
+        } else {
+          next(err);
+        }
+      }
+    )
+    .catch((err) => next(err));
+});
 bookRouter.post("/checking", authenticate.verifyUser, (req, res, next) => {
   Books.find({ skuId: { $in: JSON.parse(req.body.skuId) } })
     .then(
@@ -111,7 +136,7 @@ bookRouter
       .catch((err) => next(err));
   })
   .delete(authenticate.verifyUser, (req, res, next) => {
-    Books.findOneAndRemove({ skuId: req.params.bookId })
+    Books.findOneAndRemove({ skuId: req.params.sku_id })
       .then(
         (resp) => {
           res.statusCode = 200;

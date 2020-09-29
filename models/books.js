@@ -9,7 +9,7 @@ var bookSchema = new Schema({
   stocks: {
     type: Number,
     required: true,
-    default: 01,
+    default: 00,
   },
   skuId: {
     type: String,
@@ -18,11 +18,11 @@ var bookSchema = new Schema({
   },
   publisher: {
     type: String,
-    required: true,
+    default: "",
   },
   price: {
     type: Number,
-    require: true,
+    default: 00,
   },
 });
 
