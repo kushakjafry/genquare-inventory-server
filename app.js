@@ -6,6 +6,7 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const bookRouter = require("./routes/booksRouter");
+const invoiceRouter = require("./routes/invoiceRouter");
 var usersRouter = require("./routes/users");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -41,6 +42,7 @@ app.use(passport.initialize());
 
 app.use("/users", usersRouter);
 app.use("/books", bookRouter);
+app.use("/invoice", invoiceRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
