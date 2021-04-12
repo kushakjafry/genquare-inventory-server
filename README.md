@@ -1,5 +1,7 @@
 # Genquare-inventory-server
 
+It is the backend for the <a href="https://github.com/kushakjafry/genquare-inventory-server">Inventory Management</a> Application
+
 <h1> Starting Server </h1>
 
 To run locally use go to root folder and run <strong>npm install</strong>.
