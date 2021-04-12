@@ -57,7 +57,8 @@ invoiceRouter
       .limit(1)
       .then(
         (data) => {
-          if (!data) {
+          console.log(data.length);
+          if (data.length === 0) {
             res.statusCode = 200;
             res.setHeader("Content-Type", "application/json");
             res.json({ invoice: "GQ0000001" });

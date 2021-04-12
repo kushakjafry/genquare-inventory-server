@@ -53,10 +53,10 @@ let invoiceSchema = new Schema({
         type: Number,
         required: true,
       },
-      sellingPrice: {
-        type: Number,
-        required: true,
-      },
+      // sellingPrice: {
+      //   type: Number,
+      //   required: true,
+      // },
       discount: {
         type: Number,
         required: true,
