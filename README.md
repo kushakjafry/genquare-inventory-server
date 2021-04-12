@@ -1,6 +1,6 @@
 # Genquare-inventory-server
 
-It is the backend for the <a href="https://github.com/kushakjafry/genquare-inventory-server">Inventory Management</a> Application
+It is the backend for the <a href="https://github.com/kushakjafry/genquare-inventory-software">Inventory Management</a> Application
 
 <h1> Starting Server </h1>
 
