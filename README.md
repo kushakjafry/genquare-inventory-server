@@ -4,10 +4,10 @@ It is the backend for the <a href="https://github.com/kushakjafry/genquare-inven
 
 <h1> Starting Server </h1>
 
-To run locally use go to root folder and run <strong>npm install</strong>.
+To run locally use go to root folder and run `npm install`.
 
-After that create a <strong>.env</strong> file and enter the variable similar ro <strong> .env-example file</strong>
+After that create a `.env` file and enter the variable similar to `.env-example file`.
 
 Enter the variables.
 
-Enter <strong> npm start </strong> to start the server..
+Enter `npm start` to start the server..
